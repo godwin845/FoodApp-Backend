@@ -9,7 +9,7 @@ const app = express();
 // Environment variables (HOST and MongoDB URI should be in a .env file)
 const PORT = process.env.PORT || 5000; // Default to 5000 if not set in .env
 
-// Middleware
+// Middleware 
 app.use(express.json());
 app.use(cors());
 
