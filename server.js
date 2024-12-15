@@ -7,7 +7,8 @@ require('dotenv').config(); // To load environment variables
 const app = express();
 
 // Environment variables (HOST and MongoDB URI should be in a .env file)
-const PORT = process.env.PORT || 5000; // Default to 5000 if not set in .env
+const HOST = process.env.HOST || '0.0.0.0';
+const PORT = process.env.PORT || 10000; // Default to 5000 if not set in .env
 
 // Middleware 
 app.use(express.json());
@@ -149,6 +150,6 @@ app.delete('/api/products/:id', async (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`);
 });
