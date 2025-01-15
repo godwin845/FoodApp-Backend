@@ -9,7 +9,7 @@ dotenv.config();
 
 const app: Application = express();
 const PORT: any = process.env.PORT || 10000;
-const HOST = process.env.HOST || 'localhost';
+const HOST = process.env.HOST || '0.0.0.0';
 
 app.use(express.json());
 app.use(cors());
